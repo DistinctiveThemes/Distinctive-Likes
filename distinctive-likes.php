@@ -275,7 +275,7 @@ class ZillaLikes {
 				elseif( $likes == 1 ) { $postfix = $one_postfix; }
 				else { $postfix = $more_postfix; }
 				
-				return '<span class="zilla-likes-count">'. $likes .'</span> <span class="zilla-likes-postfix">'. $postfix .'</span>';
+				return '<span class="zilla-likes-count"><i class="el-icon-heart"></i>'. $likes .'</span> <span class="zilla-likes-postfix">'. $postfix .'</span>';
 				break;
 				
 			case 'update':
@@ -290,7 +290,7 @@ class ZillaLikes {
 				elseif( $likes == 1 ) { $postfix = $one_postfix; }
 				else { $postfix = $more_postfix; }
 				
-				return '<span class="zilla-likes-count">'. $likes .'</span> <span class="zilla-likes-postfix">'. $postfix .'</span>';
+				return '<span class="zilla-likes-count"><i class="el-icon-heart"></i>'. $likes .'</span> <span class="zilla-likes-postfix">'. $postfix .'</span>';
 				break;
 		
 		}
