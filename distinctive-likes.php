@@ -54,11 +54,8 @@ class ZillaLikes {
 	
 	function admin_menu() 
 	{
-		$icon_url = plugins_url( '/images/favicon.png', __FILE__ );
-		$page_hook = add_menu_page( __( 'ZillaLikes Settings', 'zillalikes'), 'ZillaLikes', 'update_core', 'zilla-likes', array(&$this, 'settings_page'), $icon_url );
-		add_submenu_page( 'zilla-likes', __( 'Settings', 'zillalikes' ), __( 'ZillaLikes Settings', 'zillalikes' ), 'update_core', 'zilla-likes', array(&$this, 'settings_page') );
-		// ZillaFramework link
-		add_submenu_page( 'zillaframework', 'ZillaLikes', 'ZillaLikes', 'update_core', 'zilla-likes', array(&$this, 'settings_page') );
+		
+		add_submenu_page( 'options-general.php', __( 'Settings', 'zillalikes' ), __( 'Distintive Likes', 'zillalikes' ), 'update_core', 'distintive-likes', array(&$this, 'settings_page') );
 	}
 	
 	function settings_page()
@@ -66,7 +63,7 @@ class ZillaLikes {
 		?>
 		<div class="wrap">
 			<div id="icon-themes" class="icon32"></div>
-			<h2><?php _e('ZillaLikes Settings', 'zillalikes'); ?></h2>
+			<h2><?php _e('DistintiveLikes Settings', 'zillalikes'); ?></h2>
 			<?php if( isset($_GET['settings-updated']) && $_GET['settings-updated'] ){ ?>
 			<div id="setting-error-settings_updated" class="updated settings-error"> 
 				<p><strong><?php _e( 'Settings saved.', 'zillalikes' ); ?></strong></p>
@@ -84,8 +81,7 @@ class ZillaLikes {
 	function section_intro()
 	{
 	    ?>
-		<p><?php _e('ZillaLikes allows you to display like icons throughout your site. Customize the output of ZillaLike with this settings page.', 'zillalikes'); ?></p>
-		<p><?php _e('Check out our other free <a href="http://www.themezilla.com/plugins/?ref=zillalikes">plugins</a> and <a href="http://www.themezilla.com/themes/?ref=zillalikes">themes</a>.', 'zillalikes'); ?></p>
+		<p><?php _e('DistintiveLikes allows you to display like icons throughout your site. Customize the output of DistintiveLike with this settings page.', 'zillalikes'); ?></p>
 		<?php
 		
 	}
@@ -360,7 +356,7 @@ function zilla_likes()
 class ZillaLikes_Widget extends WP_Widget {
 
 	function __construct() {
-		parent::WP_Widget( 'zilla_likes_widget', 'ZillaLikes', array( 'description' => __('Displays your most popular posts sorted by most liked', 'zillalikes') ) );
+		parent::WP_Widget( 'zilla_likes_widget', 'DistinctiveLikes', array( 'description' => __('Displays your most popular posts sorted by most liked', 'zillalikes') ) );
 	}
 
 	function widget( $args, $instance ) {
